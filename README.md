@@ -7,4 +7,4 @@
 - Описать два jQuery-плагина:
     - Плагин опроса (данные: `quiz.json`)
     - Плагин отображения ответов (данные: `results.json`)
-- Gist: d.pr/5aFv
+- (Gist: jQuery Plugin Boilerplate)[d.pr/5aFv]
