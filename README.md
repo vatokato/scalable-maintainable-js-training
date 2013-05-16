@@ -8,3 +8,8 @@
     - Плагин опроса (данные: `quiz.json`)
     - Плагин отображения ответов (данные: `results.json`)
 - [Gist: jQuery Plugin Boilerplate](http://d.pr/5aFv)
+
+## Часть 2.
+
+- Переписать текущий jQuery-плагины на стандартный Module Pattern
+- [Gist: Module Pattern Boilerplate](http://d.pr/X87H)
