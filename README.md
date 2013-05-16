@@ -12,4 +12,6 @@
 ## Часть 2.
 
 - Переписать текущий jQuery-плагины на стандартный Module Pattern
+- Для общения модулей использовать Mediator Pattern
 - [Gist: Module Pattern Boilerplate](http://d.pr/X87H)
+- [Gist: Mediator Pattern (Event Bus)](http://d.pr/QCoU)
