@@ -1,18 +1,14 @@
 [
     {
-        "to": 50,
-        "status": "LSR!"
+        "to": 16,
+        "status": "Диплом бакалавра"
     },
     {
-        "to": 75,
-        "status": "Hm..."
+        "to": 23,
+        "status": "Диплом магистра"
     },
     {
-        "to": 75,
-        "status": "Not bad!"
-    },
-    {
-        "to": 95,
-        "status": "Perfect!"
+        "to": 30,
+        "status": "Диплом доктора"
     }
 ]
