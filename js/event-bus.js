@@ -1,13 +1,14 @@
-var EventBus = EventBus || {};
+var APP = APP || {};
+APP.EventBus = {};
  
-EventBus.bind = function (ev, callback, context) {
+APP.EventBus.bind = function (ev, callback, context) {
     var calls = this._callbacks || (this._callbacks = {});
     var list = calls[ev] || (calls[ev] = []);
     list.push([callback, context]);
     return this;
 };
  
-EventBus.unbind = function (ev, callback) {
+APP.EventBus.unbind = function (ev, callback) {
     var calls;
     if (!ev) {
         this._callbacks = {};
@@ -28,7 +29,7 @@ EventBus.unbind = function (ev, callback) {
     return this;
 };
  
-EventBus.trigger = function (eventName) {
+APP.EventBus.trigger = function (eventName) {
     var list, calls, ev, callback, args;
     var both = 2;
     if (!(calls = this._callbacks)) return this;

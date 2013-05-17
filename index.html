@@ -59,30 +59,24 @@
 	<span>Итого:</span> <span class="score__result"><%= score %> и приз: <%= status %></span>
 </script>
 
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script src="underscore.js"></script>
-<script src="data.js"></script>
-<script src="event-bus.js"></script>
-<script src="module-quiz.js"></script>
-<script src="module-result.js"></script>
+<script src="js/require.js"></script>
 <script>
 
-	var Quiz = {
-		start: function () {
-			this.initModules();
-		},
-		initModules: function () {
-			quizModule.init();
-			resultModule.init();
+	requirejs.config({
+		'baseUrl': 'js',
+		'paths': {
+			'app': '../app',
+			'jquery': 'http://code.jquery.com/jquery-1.9.1.min',
+			'underscore': 'http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.2.1/underscore-min',
+			'module-quiz': 'modules/module-quiz',
+			'module-result': 'modules/module-result'
+		}
+	});
 
-			$(document).on('quiz:isover', function (evt, data) { 
-				resultModule.showResult(data);
-			});
-		},
+	require(['jquery', 'app'], function ($, APP) {
+		APP.start();			
+	});
 
-	}; 
-
-	Quiz.start();
 
 </script>
 </body>

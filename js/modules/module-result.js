@@ -1,4 +1,19 @@
-var resultModule = (function (window, $) {
+define(['jquery', 'underscore','app'], function($, _, APP) {
+ var results = [
+    {
+        "to": 16,
+        "status": "Диплом бакалавра"
+    },
+    {
+        "to": 23,
+        "status": "Диплом магистра"
+    },
+    {
+        "to": 30,
+        "status": "Диплом доктора"
+    }
+];
+
     var defaults = {
             score: 0
         },
@@ -10,7 +25,6 @@ var resultModule = (function (window, $) {
     }
 
     function attachEventListeners () {
-        _.extend(resultModule, EventBus);    
     }
 
     function getStatus(data) {
@@ -31,4 +45,5 @@ var resultModule = (function (window, $) {
             showResult: function (data) {
                 renderResult(getStatus(data));
             }
-}})(window, jQuery);
+        }
+    });
