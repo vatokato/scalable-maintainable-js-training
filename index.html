@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Quiz</title>
+<style>
+	.quiz-wrap,
+	.quiz__action-bar,
+	.result-wrap {
+		width: 500px;
+		margin: 0 auto;
+	}
+	.quiz-wrap {
+		margin-top: 50px;
+	}
+	.question-wrap {
+
+	}
+	.question__title {
+		margin: 1em 0;
+		font-weight: bold;
+	}
+	.question__radio {
+		display: block;
+		margin-bottom: .5em;
+	}
+	.result-wrap {
+		margin-top: 1em;
+		font-size: 120%;
+		font-weight: bold;
+	}
+	.question__result-button {
+		display: none;
+	}
+</style>
+</head>
+<body>
+	<div class="quiz-wrap">
+	</div>
+	<div class="quiz__action-bar">
+		<button class="question__next-button" disabled="disabled">Next</button>
+		<button class="question__result-button" disabled="disabled">Show result</button>
+	</div>
+	<div class="result-wrap">
+	</div>
+
+<script type='text/template' id="question-template">
+  <div class='question-wrap'> 
+   	<div class="question__title"><%= question %></div>
+  		<% for (var i=0, l = answers.length; i<l; i++) { %>
+  			<div class="question__radio">
+	  			<input type="radio" name="answer" id="answer-<%= i %>" value="<%= i %>"><label for="answer-<%= i %>"><%= answers[i] %></label>
+  			</div>
+  		<%} %>
+  </div>
+</script>	
+
+<script type='text/template' id="result-template">
+	<span>Итого:</span> <span class="score__result"><%= score %> и приз: <%= status %></span>
+</script>
+
+<script src="js/require.js"></script>
+<script>
+
+	requirejs.config({
+		'baseUrl': 'js',
+		'paths': {
+			'app': '../app',
+			'jquery': 'http://code.jquery.com/jquery-1.9.1.min',
+			'underscore': 'http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.2.1/underscore-min',
+			'module-quiz': 'modules/module-quiz',
+			'module-result': 'modules/module-result'
+		}
+	});
+
+	require(['jquery', 'app'], function ($, APP) {
+		APP.start();			
+	});
+
+
+</script>
+</body>
+</html>
